@@ -70,43 +70,47 @@
     </head>
     <body class="bg-light">
         <div class="container d-flex justify-content-center align-items-center vh-100">
-            <div class="card shadow text-center" style="width: 30rem;">
-                <div class="card-header">
-                    <h2>Statement of Account</h2>
-                </div>
-                <div class="card-body">
-                    <form onsubmit="handleExport(event)">
-                        <div class="row">
-                            <div class="col-sm-12 mb-3">
-                                <div class="input-group">
-                                    <!-- <span class="input-group-text">Account Number</span> -->
-                                    <input type="number" class="form-control" name="account_no" id="account_no" placeholder="Account Number eg(123456)" required>
+            <div class="text-center">
+                <img src="/static/banner.png" class="img-fluid mb-3" alt="Banner" style="max-width: 100%;">
+                <div class="card shadow text-center" style="width: 30rem;">
+                    <div class="card-header">
+                        <h2>Statement of Account</h2>
+                    </div>
+                    <div class="card-body">
+                        <form onsubmit="handleExport(event)">
+                            <div class="row">
+                                <div class="col-sm-12 mb-3">
+                                    <div class="input-group">
+                                        <!-- <span class="input-group-text">Account Number</span> -->
+                                        <input type="number" class="form-control" name="account_no" id="account_no" placeholder="Account Number eg(123456)" required>
+                                        <input type="submit" class="btn btn-outline-primary" value="Download">
+                                    </div>
+                                </div>
+                                <!-- <div class="col-sm-12 mb-3">
+                                    <div class="input-group">
+                                        <span class="input-group-text">From</span>
+                                        <input type="date" class="form-control" name="start_date" id="start_date" required>
+                                        <span class="input-group-text">To</span>
+                                        <input type="date" class="form-control" name="end_date" id="end_date" required>
+                                    </div>
+                                </div> -->
+
+                                <!-- <div class="col-sm-12 mb-3">
                                     <input type="submit" class="btn btn-outline-primary" value="Download">
+                                </div> -->
+
+                                <div class="col-md-12 mt-3">
+                                    <div id="loader" class="spinner-border text-primary" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                    <p id="response" style="font-weight: bold;"></p>
                                 </div>
                             </div>
-                            <!-- <div class="col-sm-12 mb-3">
-                                <div class="input-group">
-                                    <span class="input-group-text">From</span>
-                                    <input type="date" class="form-control" name="start_date" id="start_date" required>
-                                    <span class="input-group-text">To</span>
-                                    <input type="date" class="form-control" name="end_date" id="end_date" required>
-                                </div>
-                            </div> -->
-
-                            <!-- <div class="col-sm-12 mb-3">
-                                <input type="submit" class="btn btn-outline-primary" value="Download">
-                            </div> -->
-
-                            <div class="col-md-12 mt-3">
-                                <div id="loader" class="spinner-border text-primary" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                </div>
-                                <p id="response" style="font-weight: bold;"></p>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
+            
         </div>
     </body>
 </html>
