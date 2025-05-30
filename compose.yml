@@ -1,12 +1,7 @@
-services:
-  web:
+services: 
+  web: 
     build:
-      context: .
-      target: builder
-    ports:
+     context: .
+     target: builder
+    ports: 
       - '8000:8000'
-    # Add these for debugging
-    environment:
-      - DEBUG=1
-    # Force port binding to all interfaces
-    command: ["--bind", "0.0.0.0:8000"]  # Example for Python, adjust for your app
