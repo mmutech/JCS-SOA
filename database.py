@@ -11,7 +11,8 @@ SSH_PASSWORD = 'etx203ax2023'  # 🔐
 DB_USER = 'jed'
 DB_PASSWORD = 'password'
 DB_NAME = 'billing_history'
-REMOTE_DB_HOST = '127.0.0.1'  # Typically localhost if DB is on same server
+#REMOTE_DB_HOST = 'localhost'  # Typically localhost if DB is on same server
+REMOTE_DB_HOST='172.17.0.1'
 REMOTE_DB_PORT = 3306
 
 # Create SSH tunnel
@@ -26,8 +27,11 @@ REMOTE_DB_PORT = 3306
 # server.start()
 
 # SQLAlchemy DB URI using the local tunnel
+#SQLALCHEMY_DATABASE_URI = (
+#    f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{REMOTE_DB_HOST}:{REMOTE_DB_PORT}/{DB_NAME}"
+#)
 SQLALCHEMY_DATABASE_URI = (
-    f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@127.0.0.1:{REMOTE_DB_PORT}/{DB_NAME}"
+    f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@host.docker.internal:{REMOTE_DB_PORT}/{DB_NAME}"
 )
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
